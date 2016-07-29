@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    <form method='POST' action='/categories/{{category}}?_method=DELETE'>
+      <button class='btn btn-danger' type='submit'>Delete Category</button>
+    </form>
+  <div class='well'>
+    <form method='POST' action='/categories/{{category}}/products'>
+      <div class='form-group'>
+        <label for='name'>Product Name</label>
+        <input class='form-control' name='name' id='name' />
+      </div>
+      <button type='submit' class='btn btn-primary'>Insert Product</button>
+    </form>
+  </div>
+  <ul class='list-group'>
+    {% for idx, product in products %}
+    <li class='list-group-item'>
+      {{ product.name }}
+      <form method='POST' class='pull-right' style='display:inline' action='/categories/{{category}}/products/{{idx}}?_method=DELETE'>
+        <button type='submit' class='btn btn-danger'>Delete Product</button>
+      </form>
+      <br clear='all' />
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
