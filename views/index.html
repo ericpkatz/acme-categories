@@ -12,6 +12,93 @@
     </div>
     <button class='btn btn-primary'>Save Category</button>
   </form>
+  <ul class='list-group'>
+    <li class='list-group-item'>
+      This application can do the following:
+      <pre>
+        Allow you to navigate to different categories.
+
+        On a category page you can see the corresponding products
+
+        You can insert a category on the home page
+
+        You can insert a product on the category page
+
+        You can delete both categories and products
+
+        Note there is no updating functionality. Feel free to add it if you have time.
+      </pre>
+    </li>
+    <li class='list-group-item'>
+      Data should by using an object literal, where each key is the name of category. Each category should contain an array of products. Keep in mind that the way to identify a category is by it's name and a product can be referenced by it's index.
+      <pre>
+        var _data = {
+          SpyWare: [
+            { name: 'Glass Tumbler' }
+          ],
+          Stationary: [
+            { name: 'Paper Clips' },
+            { name: 'Paper' },
+          ]
+      </pre>
+    </li>
+    <li class='list-group-item'>
+      Be mindful of routes. The only routes you should need are the following.
+      <pre>
+        GET: / which displays the home page
+
+        POST: /categories which inserts a category
+
+        GET: /categories/:category
+        which displays the products for a named category.
+        example: /categories/clothing
+
+        DELETE: /categories/:category
+        which deletes a named category
+        example: /categories/clothing
+
+        POST: /categories/:category/products
+        which inserts a new product for a named category
+        example: /categories/clothing/products
+
+        DELETE /:category/products/:idx 
+        which deletes a product for a named category by it's index
+        example: /categories/clothing/products/3
+      </pre>
+    </li>
+    <li class='list-group-item'>
+      The only files you should need to create are as follows.
+      <pre>
+        /app.js (~30 lines)
+
+        /db.js - This is your data model class. 
+        It holds your data. And has methods which the routes can use. (~30 lines)
+
+        /routes/categories.js (~30 lines)
+
+        /views/layout.html (~20 lines)
+
+        /views/index.html
+
+        /views/category.html (~25 lines)
+        
+      </pre>
+    </li>
+    <li class='list-group-item'>
+      Also...
+      <pre>
+          Try and keep code as tight as possible.
+
+          Be aware of naming, indentation, semi-colons.
+
+          If you find yourself writing too much code, 
+          STOP, you're probably overthinking it.
+
+          If you write a line of code that you don't understand... remove it. :)
+      </pre>
+
+    </li>
+  </ul>
 </div>
 
 {% endblock %}

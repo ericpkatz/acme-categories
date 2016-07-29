@@ -1,4 +1,12 @@
-var _data = {};
+var _data = {
+  SpyWare: [
+    { name: 'Glass Tumbler' }
+  ],
+  Stationary: [
+    { name: 'Paper Clips' },
+    { name: 'Paper' },
+  ]
+};
 module.exports = {
   reset: function(){
     _data = {};

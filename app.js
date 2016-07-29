@@ -25,6 +25,5 @@ app.use('/categories', require('./routes/categories'));
 
 
 app.listen(process.env.PORT, function(){
-  DB.addProduct('Spy Ware', { name: 'Binoculars' });
   console.log('listening on ' + process.env.PORT);
 });
